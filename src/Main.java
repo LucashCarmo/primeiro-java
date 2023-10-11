@@ -37,17 +37,19 @@ public class Main {
             } else if (operador == 2) {
                 System.out.println("Informe o valor a receber: ");
                 double receber = scanner.nextDouble();
-                System.out.println("Saldo atualizado: " + (saldo = saldo + receber));
+                saldo += receber;
+                System.out.println("Saldo atualizado: " + saldo);
             } else if (operador == 3) {
                 System.out.println("Informe o valor que deseja transferir: ");
                 double transferir = scanner.nextDouble();
                 if (transferir > saldo){
                     System.out.println("Não há saldo suficiente para fazer essa transferência.");
                 } else {
-                    System.out.println("Saldo atualizado: " + (saldo= saldo - transferir));
+                    saldo -= transferir;
+                    System.out.println("Saldo atualizado: " + saldo);
                 }
-            } else {
-                break;
+            } else if (operador != 4) {
+                System.out.println("Opção invalida");
             }
         }
     }
